@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+    Добавить вакансию
+{% endblock %}
+{% block content %}
+    <div>
+        <h2>Добавить новую вакансию</h2>
+        <form action=" " method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" value="Добавить">
+        </form>
+    </div>
+    <script>
+        $('input').addClass('form-control mb-3');
+        $('text').addClass('form-control mb-3');
+        $('select').addClass('form-control mb-3');
+    </script>
+{% endblock %}

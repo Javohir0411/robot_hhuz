@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}
+    Посмотреть вакансии
+{% endblock %}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+{% block content %}
+
+    <h2>Вакансии</h2>
+
+    <table>
+        <tr>
+            <th>Должность</th>
+            <th>Название региона</th>
+            <th>Зарплата от</th>
+            <th>Заработная плата</th>
+            <th>Валюта</th>
+            <th>Город</th>
+            <th>Улица</th>
+            <th>Здание</th>
+            <th>Сырой</th>
+            <th>Имя работодателя</th>
+            <th>Требования</th>
+            <th>Обязанности</th>
+            <th>Опыт работы</th>
+            <th>Опыт</th>
+        </tr>
+        <tr>
+            <td>{{ vacancies.vacancy_name }}</td>
+            <td>{{ vacancies.area_name }}</td>
+            <td>{{ vacancies.salary_from }}</td>
+            <td>{{ vacancies.salary_to }}</td>
+            <td>{{ vacancies.currency }}</td>
+            <td>{{ vacancies.city }}</td>
+            <td>{{ vacancies.street }}</td>
+            <td>{{ vacancies.building }}</td>
+            <td>{{ vacancies.raw }}</td>
+            <td>{{ vacancies.employer_name }}</td>
+            <td>{{ vacancies.requirements }}</td>
+            <td>{{ vacancies.responsibilities }}</td>
+            <td>{{ vacancies.exp_from }}</td>
+            <td>{{ vacancies.exp_to }}</td>
+        </tr>
+    </table>
+
+{% endblock %}
