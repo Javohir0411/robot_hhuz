@@ -31,16 +31,6 @@ DJANGO_DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
-# THIRD_APPS = [
-#     'drf_yasg',
-#     'rest_framework',
-#     'rest_framework_simplejwt',
-#     'ckeditor',
-#     'ckeditor_uploader',
-#     'rest_framework_simplejwt.token_blacklist',
-#
-# ]
-
 MY_APPS = [
     'app_robot',
 ]

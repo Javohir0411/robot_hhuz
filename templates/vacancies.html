@@ -4,26 +4,25 @@
 {% endblock %}
 <style>
     table {
-        font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
     }
 
-    td, th {
-        border: 1px solid #dddddd;
+    th, td {
         text-align: left;
         padding: 8px;
     }
 
     tr:nth-child(even) {
-        background-color: #dddddd;
+        background-color: #D6EEEE;
     }
 </style>
 {% block content %}
 
     <h2>Вакансии</h2>
 
-    <table>
+    <table class="table">
+        <thead>
         <tr>
             <th>Должность</th>
             <th>Название региона</th>
@@ -33,29 +32,31 @@
             <th>Город</th>
             <th>Улица</th>
             <th>Здание</th>
-            <th>Сырой</th>
             <th>Имя работодателя</th>
             <th>Требования</th>
             <th>Обязанности</th>
             <th>Опыт работы</th>
             <th>Опыт</th>
         </tr>
-        <tr>
-            <td>{{ vacancies.vacancy_name }}</td>
-            <td>{{ vacancies.area_name }}</td>
-            <td>{{ vacancies.salary_from }}</td>
-            <td>{{ vacancies.salary_to }}</td>
-            <td>{{ vacancies.currency }}</td>
-            <td>{{ vacancies.city }}</td>
-            <td>{{ vacancies.street }}</td>
-            <td>{{ vacancies.building }}</td>
-            <td>{{ vacancies.raw }}</td>
-            <td>{{ vacancies.employer_name }}</td>
-            <td>{{ vacancies.requirements }}</td>
-            <td>{{ vacancies.responsibilities }}</td>
-            <td>{{ vacancies.exp_from }}</td>
-            <td>{{ vacancies.exp_to }}</td>
-        </tr>
+        </thead>
+        <tbody>
+        {% for vacancies in vacancy %}
+            <tr>
+                <td>{{ vacancies.vacancy_name }}</td>
+                <td>{{ vacancies.area_name }}</td>
+                <td>{{ vacancies.salary_from }}</td>
+                <td>{{ vacancies.salary_to }}</td>
+                <td>{{ vacancies.currency }}</td>
+                <td>{{ vacancies.city }}</td>
+                <td>{{ vacancies.street }}</td>
+                <td>{{ vacancies.building }}</td>
+                <td>{{ vacancies.employer_name }}</td>
+                <td>{{ vacancies.requirements }}</td>
+                <td>{{ vacancies.responsibilities }}</td>
+                <td>{{ vacancies.exp_from }}</td>
+                <td>{{ vacancies.exp_to }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
     </table>
-
 {% endblock %}

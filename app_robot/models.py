@@ -21,7 +21,6 @@ class Vacancy(AbstractBaseModel):
     city = models.CharField(max_length=255)
     street = models.CharField(max_length=255)
     building = models.CharField(max_length=100, default=None)
-    raw = models.TextField()
     employer_name = models.CharField(max_length=355)
     requirements = models.TextField()
     responsibilities = models.TextField()

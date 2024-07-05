@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     main,
     add_vacancy,
-    vacancies
+    vacancies,
 )
 urlpatterns = [
     path('', main, name='main'),
