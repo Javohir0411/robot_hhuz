@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    RPA system
+{% endblock %}
+{% block content %}
+    <div>
+            <h1 style="
+        justify-content: center; 
+        display: flex"
+        class="rpa">Напишите желаемое название вакансии в форме ниже, и система автоматически запишет информацию о
+        вакансии с сайта hh.uz в базу данных.</h1>
+        <form action=" " method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" value="Добавить">
+        </form>
+    </div>
+{% endblock %}

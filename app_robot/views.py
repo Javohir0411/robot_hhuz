@@ -1,8 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
+from .forms import VacancyForm, RpaForm
 from .models import Vacancy
-from .forms import VacancyForm
 
 
 def main(request):
@@ -23,3 +21,18 @@ def add_vacancy(request):
 def vacancies(request):
     vacancy = Vacancy.objects.all()
     return render(request, 'vacancies.html', {'vacancy': vacancy})
+
+
+# def rpa(request):
+#     vacancy = Vacancy.objects.all()
+#     return render(request, 'rpa.html', {'vacancy': vacancy})
+
+def rpa_view(request):
+    if request.method == 'POST':
+        form = RpaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main')
+    else:
+        form = RpaForm()
+    return render(request, 'rpa.html', {'form': form})

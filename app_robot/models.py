@@ -34,3 +34,5 @@ class Vacancy(AbstractBaseModel):
         verbose_name = "Vacancy"
         verbose_name_plural = "Vacancies"
         db_table = 'vacancies'
+
+
