@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+   Scraped Vacancies
+{% endblock %}
+{% block content %}
+    <h1>Scraped Vacancies</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for vacancy in vacancies %}
+        <li>
+            <strong>{{ vacancy.title }}</strong><br>
+            <a href="{{ vacancy.url }}">{{ vacancy.url }}</a><br>
+            Employer: {{ vacancy.employer }}<br>
+            Salary: {{ vacancy.salary }}<br>
+            City: {{ vacancy.city }}<br>
+            Employer name: {{ vacancy.employer_name }}<br>
+            Requirements: {{ vacancy.requirements }}<br>
+            Salary: {{ vacancy.responsibilities }}<br>
+            Experience: {{ vacancy.exp_from }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
